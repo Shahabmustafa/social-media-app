@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:realtime_firebase/res/component/input_text_field.dart';
 import 'package:realtime_firebase/res/component/rounded_button.dart';
 import 'package:realtime_firebase/utls/routes/routes.dart';
+import 'package:realtime_firebase/utls/utls.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -58,7 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             focusNode: emailFocusNode,
                             controller: emailController,
                             enable: true,
-                            onFiledSubmittedvalue: (value){},
+                            onFiledSubmittedvalue: (value){
+                              Utils.fieldFocus(context, emailFocusNode, passwordFocusNode);
+                            },
                             obsecureText: false,
                             hint: 'Email',
                             keyboardType: TextInputType.emailAddress,
@@ -74,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: passwordController,
                             enable: true,
                             onFiledSubmittedvalue: (value){},
-                            obsecureText: false,
+                            obsecureText: true,
                             hint: 'Password',
                             keyboardType: TextInputType.emailAddress,
                             validator: (value ){
@@ -102,7 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   loading: false,
                     title: ('Log in'),
                     onTap: (){
+                    if(_keyForm.currentState!.validate()){
 
+                    }
                     }
                 ),
                 SizedBox(
