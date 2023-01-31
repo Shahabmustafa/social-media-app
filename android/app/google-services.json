@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629812810948",
+    "project_id": "hybrid-chess-368706",
+    "storage_bucket": "hybrid-chess-368706.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629812810948:android:142c2c5f72d892b221a591",
+        "android_client_info": {
+          "package_name": "com.example.realtime_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629812810948-mk34r3mbd3thkuhgsmihgorv3jhnms0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8AIKzHGsQLn9w8uO8_RAacmFKN0wvaWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629812810948-mk34r3mbd3thkuhgsmihgorv3jhnms0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
