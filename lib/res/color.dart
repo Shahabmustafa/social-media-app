@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColors{
@@ -17,7 +16,7 @@ class AppColors{
   static const Color hintColor =  Color.fromRGBO(114, 114, 114, 1);
 
   static const Color textFieldDefaultFocus =  Color(0xfff5f5f6);
-  static const Color textFieldDefaultBorderColor  =  Color(0xfffDFDFE1);
+  static const Color textFieldDefaultBorderColor  =  Color(0xfffdfdfe1);
   static const Color textFieldFocusBorderColor =  Color.fromRGBO(19, 103, 33 , 1);
 
 

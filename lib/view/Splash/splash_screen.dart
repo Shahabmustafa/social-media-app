@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_firebase/view_model/services/splash_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -8,7 +9,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashService service = SplashService();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    service.isLogin(context);
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(

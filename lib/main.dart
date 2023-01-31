@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: AppColors.primaryMaterialColor,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           color: Colors.black,
           titleTextStyle: TextStyle(fontSize: 20.0, color: AppColors.primaryTextTextColor)
