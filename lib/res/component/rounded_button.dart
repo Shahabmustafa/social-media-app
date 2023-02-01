@@ -19,7 +19,7 @@ class RoundedButton extends StatelessWidget {
           border: Border.all(color: AppColors.primaryMaterialColor),
           color: color,
         ),
-        child: loading ? Center(child: CircularProgressIndicator()) : Center(
+        child: loading ? Center(child: CircularProgressIndicator(color: AppColors.whiteColor,)) : Center(
             child: Text(title,style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 16.0),)),
       ),
     );

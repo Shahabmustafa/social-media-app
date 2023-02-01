@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: AppColors.primaryMaterialColor,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          color: Colors.black,
+          color: Colors.white,
+          centerTitle: true,
           titleTextStyle: TextStyle(fontSize: 20.0, color: AppColors.primaryTextTextColor)
         ),
         textTheme: const TextTheme(

@@ -17,9 +17,11 @@ class _SigninScreenState extends State<SigninScreen> {
   final userNameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
   final userNameFocusNode = FocusNode();
   final passwordFocusNode = FocusNode();
   final emailFocusNode = FocusNode();
+
   final  _keyForm = GlobalKey<FormState>();
 
   @override
@@ -101,7 +103,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 controller: passwordController,
                                 enable: true,
                                 onFiledSubmittedvalue: (value){},
-                                obsecureText: false,
+                                obsecureText: true,
                                 hint: 'Password',
                                 keyboardType: TextInputType.emailAddress,
                                 validator: (value ){
@@ -120,7 +122,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           title: ('Sign Up'),
                           onTap: (){
                             if(_keyForm.currentState!.validate()){
-                              provider.SignUp(userNameController.text, emailController.text, passwordController.text);
+                              provider.SignUp(context,userNameController.text, emailController.text, passwordController.text);
                             }
                           }
                       ),
@@ -148,7 +150,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 );
               },
             ),
-          )
+          ),
         ),
       ),
     );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:realtime_firebase/res/component/input_text_field.dart';
 import 'package:realtime_firebase/res/component/rounded_button.dart';
 import 'package:realtime_firebase/utls/routes/routes.dart';
 import 'package:realtime_firebase/utls/utls.dart';
+import 'package:realtime_firebase/view_model/login/login_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -91,24 +93,40 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: height * 0.03,
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                    child: Text('Forget Password',style: Theme.of(context).textTheme.headline2!.copyWith(
-                      fontSize: 15.0,
-                      decoration: TextDecoration.underline,
-                    ),),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, RoutesName.forgetPassword);
+                  },
+                  child: Align(
+                    alignment: Alignment.topRight,
+                      child: Text('Forget Password',style: Theme.of(context).textTheme.headline2!.copyWith(
+                        fontSize: 15.0,
+                        decoration: TextDecoration.underline,
+                      ),),
+                  ),
                 ),
                 SizedBox(
                   height: height * 0.01,
                 ),
-                RoundedButton(
-                  loading: false,
-                    title: ('Log in'),
-                    onTap: (){
-                    if(_keyForm.currentState!.validate()){
-
-                    }
-                    }
+                ChangeNotifierProvider(
+                    create: (_) => loginController(),
+                  child: Consumer<loginController>(
+                    builder: (context,provider,child){
+                      return RoundedButton(
+                          loading: provider.loading,
+                          title: ('Log in'),
+                          onTap: (){
+                            if(_keyForm.currentState!.validate()){
+                              provider.Login(
+                                  context,
+                                  emailController.text,
+                                  passwordController.text,
+                              );
+                            }
+                          }
+                      );
+                    },
+                  ),
                 ),
                 SizedBox(
                   height: height * 0.02,
