@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:realtime_firebase/res/color.dart';
 import 'package:realtime_firebase/utls/routes/routes.dart';
+import 'package:realtime_firebase/view/dashboard/profile/profile_screen.dart';
 import 'package:realtime_firebase/view_model/services/session_manager.dart';
 
 class DashBoard extends StatefulWidget {
@@ -18,10 +19,10 @@ class _DashBoardState extends State<DashBoard> {
   List<Widget> _buildScreen(){
     return [
       Text('Home'),
-      Text('Hero 2'),
-      Text('Hero 3'),
-      Text('Hero 4'),
-      Text('Hero 4'),
+      Text('Message'),
+      Text('Camera'),
+      Text(''),
+      ProfileScreen(),
     ];
   }
 
