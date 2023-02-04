@@ -29,6 +29,7 @@ class loginController with ChangeNotifier{
         Utils.toasstMessage('You Have Sucessfully Login');
         },
       ).onError((error, stackTrace){
+        setLoading(false);
         Utils.toasstMessage(error.toString());
         },
       );

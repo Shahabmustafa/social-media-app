@@ -122,8 +122,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           title: ('Sign Up'),
                           onTap: (){
                             if(_keyForm.currentState!.validate()){
-                              provider.SignUp(context,userNameController.text, emailController.text, passwordController.text);
-                            }
+                              provider.SignUp(context,userNameController.text, emailController.text, passwordController.text);}
                           }
                       ),
                       SizedBox(

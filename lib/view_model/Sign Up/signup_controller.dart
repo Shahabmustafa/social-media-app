@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:realtime_firebase/utls/routes/routes.dart';
 import 'package:realtime_firebase/utls/utls.dart';
@@ -9,8 +10,7 @@ import '../services/session_manager.dart';
 class signUpContoller with ChangeNotifier{
 
   FirebaseAuth auth = FirebaseAuth.instance;
-  final user = FirebaseFirestore.instance.collection('Users');
-
+  DatabaseReference ref = FirebaseDatabase.instance.ref().child('Users');
   bool _loading = false;
   bool get loading => _loading;
 
@@ -29,7 +29,7 @@ class signUpContoller with ChangeNotifier{
           password: password
       ).then((value){
         SessionController().userID = value.user!.uid.toString();
-        user.doc(value.user!.uid.toString()).set({
+        ref.child(value.user!.uid.toString()).set({
           'Id' : value.user!.uid.toString(),
           'userName' : username,
           'email' : value.user!.email.toString(),
