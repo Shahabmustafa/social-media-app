@@ -9,8 +9,8 @@ import '../services/session_manager.dart';
 
 class signUpContoller with ChangeNotifier{
 
-  FirebaseAuth auth = FirebaseAuth.instance;
   DatabaseReference ref = FirebaseDatabase.instance.ref().child('Users');
+  FirebaseAuth auth = FirebaseAuth.instance;
   bool _loading = false;
   bool get loading => _loading;
 
@@ -33,7 +33,7 @@ class signUpContoller with ChangeNotifier{
           'Id' : value.user!.uid.toString(),
           'userName' : username,
           'email' : value.user!.email.toString(),
-          'profile' : '',
+          'profile' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ETPUM3G6l9Pe3VTHbMbx_yfLk5KqZ_kU9w&usqp=CAU',
           'onlineStatus' : 'null',
           'phone' : '',
         }).then((value){
