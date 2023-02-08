@@ -8,8 +8,7 @@ import 'package:realtime_firebase/utls/utls.dart';
 import '../services/session_manager.dart';
 
 class signUpContoller with ChangeNotifier{
-
-  DatabaseReference ref = FirebaseDatabase.instance.ref().child('Users');
+  final _user = FirebaseFirestore.instance.collection('Users');
   FirebaseAuth auth = FirebaseAuth.instance;
   bool _loading = false;
   bool get loading => _loading;
@@ -29,7 +28,7 @@ class signUpContoller with ChangeNotifier{
           password: password
       ).then((value){
         SessionController().userID = value.user!.uid.toString();
-        ref.child(value.user!.uid.toString()).set({
+        _user.doc(value.user!.uid.toString()).set({
           'Id' : value.user!.uid.toString(),
           'userName' : username,
           'email' : value.user!.email.toString(),
