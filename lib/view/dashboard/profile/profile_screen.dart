@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   image: NetworkImage(data['profile']),
                                   loadingBuilder: (context,child,loadingProgress){
                                     if(loadingProgress == null)return child;
-                                    return Center(
+                                    return const Center(
                                       child: CircularProgressIndicator(color: Colors.black,),
                                     );
                                   },
